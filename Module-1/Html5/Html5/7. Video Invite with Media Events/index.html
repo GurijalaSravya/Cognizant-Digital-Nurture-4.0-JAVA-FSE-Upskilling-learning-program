@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Promo Video</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f9f9f9;
+      max-width: 700px;
+      margin: auto;
+      color: #333;
+      text-align: center;
+    }
+    h1 {
+      color: #0078d7;
+    }
+    video {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      margin-top: 20px;
+    }
+    #statusMsg {
+      margin-top: 15px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to the Community Event!</h1>
+
+  <video id="promoVideo" controls>
+    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div id="statusMsg"></div>
+
+  <script>
+    const video = document.getElementById('promoVideo');
+    const statusMsg = document.getElementById('statusMsg');
+
+    // oncanplay event - video ready to play
+    video.oncanplay = function() {
+      statusMsg.textContent = "🎬 Video ready to play!";
+    };
+
+    // onbeforeunload event - warn user before leaving page (simulate form unfinished)
+    window.onbeforeunload = function(e) {
+      // Customize message (note: most modern browsers ignore custom text)
+      const confirmationMessage = "You have unsaved changes. Are you sure you want to leave?";
+      e.preventDefault();
+      e.returnValue = confirmationMessage; // Chrome requires returnValue to be set
+      return confirmationMessage;
+    };
+  </script>
+
+</body>
+</html>

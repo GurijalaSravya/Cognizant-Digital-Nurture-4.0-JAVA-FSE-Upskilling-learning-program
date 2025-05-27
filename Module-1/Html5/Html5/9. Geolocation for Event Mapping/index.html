@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Find Nearby Events</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      background: #f0f8ff;
+      color: #333;
+      text-align: center;
+    }
+    h1 {
+      color: #0078d7;
+    }
+    button {
+      background-color: #0078d7;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    #output {
+      margin-top: 25px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      min-height: 50px;
+      color: #004080;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Find Nearby Events</h1>
+
+  <button id="findBtn">Find Nearby Events</button>
+
+  <div id="output"></div>
+
+  <script>
+    const findBtn = document.getElementById('findBtn');
+    const output = document.getElementById('output');
+
+    const geoOptions = {
+      enableHighAccuracy: true,
+      timeout: 10000,    // 10 seconds timeout
+      maximumAge: 0
+    };
+
+    function success(position) {
+      const latitude = position.coords.latitude.toFixed(6);
+      const longitude = position.coords.longitude.toFixed(6);
+      output.style.color = '#004080';
+      output.textContent = `Your current location:\nLatitude: ${latitude}, Longitude: ${longitude}`;
+      // Here, you could add code to find/display nearby events based on these coordinates
+    }
+
+    function error(err) {
+      output.style.color = 'red';
+      switch(err.code) {
+        case err.PERMISSION_DENIED:
+          output.textContent = "Error: Location permission denied. Please allow location access to find nearby events.";
+          break;
+        case err.POSITION_UNAVAILABLE:
+          output.textContent = "Error: Location information is unavailable.";
+          break;
+        case err.TIMEOUT:
+          output.textContent = "Error: The request to get your location timed out. Please try again.";
+          break;
+        default:
+          output.textContent = "An unknown error occurred.";
+      }
+    }
+
+    findBtn.addEventListener('click', () => {
+      output.textContent = "Locating...";
+      output.style.color = '#0078d7';
+      if (!navigator.geolocation) {
+        output.style.color = 'red';
+        output.textContent = "Geolocation is not supported by your browser.";
+        return;
+      }
+      navigator.geolocation.getCurrentPosition(success, error, geoOptions);
+    });
+  </script>
+
+</body>
+</html>

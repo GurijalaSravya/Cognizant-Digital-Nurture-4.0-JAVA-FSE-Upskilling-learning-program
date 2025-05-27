@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Save User Preferences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      max-width: 500px;
+      margin: auto;
+      background: #f9f9f9;
+      color: #333;
+    }
+    label, select, button {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+    select {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1.8px solid #ccc;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+    }
+    select:focus {
+      border-color: #0078d7;
+      outline: none;
+    }
+    button {
+      margin-top: 30px;
+      background-color: #0078d7;
+      color: white;
+      font-weight: bold;
+      padding: 12px 0;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    #status {
+      margin-top: 20px;
+      font-weight: 600;
+      color: green;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Choose Your Preferred Event Type</h1>
+
+  <label for="eventType">Event Type</label>
+  <select id="eventType" name="eventType">
+    <option value="" disabled>Select an event</option>
+    <option value="music">Music Festival</option>
+    <option value="farmersMarket">Farmers Market</option>
+    <option value="artExhibit">Art Exhibit</option>
+    <option value="marathon">Marathon</option>
+    <option value="foodFair">Food Fair</option>
+    <option value="bookFair">Book Fair</option>
+  </select>
+
+  <button id="clearBtn">Clear Preferences</button>
+
+  <div id="status"></div>
+
+  <script>
+    const eventTypeSelect = document.getElementById('eventType');
+    const clearBtn = document.getElementById('clearBtn');
+    const statusDiv = document.getElementById('status');
+
+    // On page load, check localStorage for saved preference and preselect it
+    window.addEventListener('load', () => {
+      const savedEvent = localStorage.getItem('preferredEventType');
+      if (savedEvent) {
+        eventTypeSelect.value = savedEvent;
+        statusDiv.textContent = `Your preferred event type "${eventTypeSelect.options[eventTypeSelect.selectedIndex].text}" has been loaded.`;
+      }
+    });
+
+    // Save preference to localStorage on change
+    eventTypeSelect.addEventListener('change', () => {
+      const selectedValue = eventTypeSelect.value;
+      if (selectedValue) {
+        localStorage.setItem('preferredEventType', selectedValue);
+        sessionStorage.setItem('sessionEventType', selectedValue); // also save in sessionStorage
+        statusDiv.textContent = `Preference saved: "${eventTypeSelect.options[eventTypeSelect.selectedIndex].text}"`;
+      }
+    });
+
+    // Clear both localStorage and sessionStorage on button click
+    clearBtn.addEventListener('click', () => {
+      localStorage.removeItem('preferredEventType');
+      sessionStorage.removeItem('sessionEventType');
+      eventTypeSelect.value = "";
+      statusDiv.textContent = 'Preferences cleared.';
+      eventTypeSelect.focus();
+    });
+  </script>
+
+</body>
+</html>

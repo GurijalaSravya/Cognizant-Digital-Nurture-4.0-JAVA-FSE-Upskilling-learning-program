@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community Event Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding: 30px;
+      color: #333;
+      text-align: center;
+    }
+    table {
+      margin: 0 auto;
+      border-collapse: separate;
+      border-spacing: 15px 25px;
+    }
+    td {
+      vertical-align: top;
+      width: 180px;
+    }
+    img.event-img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border: 3px solid #0078d7;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,120,215,0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    img.event-img:hover {
+      transform: scale(1.05);
+      border-color: #ffd54f;
+      box-shadow: 0 6px 14px rgba(255, 213, 79, 0.6);
+    }
+    caption {
+      caption-side: bottom;
+      margin-top: 8px;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Community Events Gallery</h1>
+
+  <table>
+    <tr>
+      <td>
+        <img src="https://static.vecteezy.com/system/resources/previews/001/248/724/original/modern-poster-music-festival-with-musical-instrument-vector.jpg" alt="Music Festival Event" title="Music Festival - Live outdoor concert" class="event-img" />
+        <caption>Music Festival - Live outdoor concert</caption>
+      </td>
+      <td>
+        <img src="https://tse4.mm.bing.net/th?id=OIP.XSC2grH8rJ-vDdg3kc-TtAHaGo&pid=Api&P=0&h=180" alt="Farmers Market Event" title="Farmers Market with fresh produce" class="event-img" />
+        <caption>Farmers Market with fresh produce</caption>
+      </td>
+      <td>
+        <img src="https://tse2.mm.bing.net/th?id=OIP.qKG0BHaxnppY8GRRV-zsAQHaD4&pid=Api&P=0&h=180" alt="Art Exhibit Event" title="Local artists exhibit" class="event-img" />
+        <caption>Local artists exhibit</caption>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://img.freepik.com/premium-photo/silhouettes-runners-city-marathon-race-sunset-race-stock_853677-123854.jpg" alt="Marathon Event" title="City marathon race" class="event-img" />
+        <caption>City marathon race</caption>
+      </td>
+      <td>
+        <img src="https://myneighborhoodnews.com/uploads/images/Generic_Photos/Activities/community_food_fair_generic.jpg" alt="Food Fair Event" title="Community food fair" class="event-img" />
+        <caption>Community food fair</caption>
+      </td>
+      <td>
+        <img src="https://www.tuxfordprimary-ac.org.uk/wp-content/uploads/sites/14/2019/11/bookfair.png" alt="Book Fair Event" title="Local book fair" class="event-img" />
+        <caption>Local book fair</caption>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

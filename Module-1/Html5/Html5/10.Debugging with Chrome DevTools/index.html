@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Debugging Exercise - Dark Theme</title>
+  <style>
+    /* Dark Theme Styles */
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px 20px;
+      max-width: 450px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #0d47a1;
+      user-select: none;
+    }
+    nav {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    nav a {
+      color: #64b5f6;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #bbdefb;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #90caf9;
+    }
+    #message {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      text-align: center;
+      min-height: 36px;
+    }
+    #message.error-text {
+      color: #ef5350;
+      font-weight: 700;
+    }
+    button {
+      display: block;
+      margin: 0 auto;
+      background-color: #1976d2;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.15rem;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(25, 118, 210, 0.7);
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    button:hover {
+      background-color: #1565c0;
+    }
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#mainContent">Main Content</a> |
+    <a href="#footer">Footer</a>
+  </nav>
+
+  <!-- Main Section -->
+  <section id="mainContent">
+    <h2>Debugging Exercise</h2>
+    <p id="message">Click the button to run the calculation.</p>
+    <button id="runBtn">Run Calculation</button>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <small>Debugging Practice © 2025</small>
+  </footer>
+
+  <script>
+    // Safe division function - prevents division by zero
+    function divideNumbers(a, b) {
+      console.log(`divideNumbers called with a=${a}, b=${b}`);
+      if (b === 0) {
+        // This won't happen with current logic but kept for safety
+        throw new Error("Cannot divide by zero!");
+      }
+      return a / b;
+    }
+
+    document.getElementById('runBtn').addEventListener('click', () => {
+      const messageEl = document.getElementById('message');
+      try {
+        const numerator = 10;
+        // Generate divisor between 1 and 3 (no zero)
+        const denominator = Math.floor(Math.random() * 3) + 1;
+        console.log(`Attempting division: ${numerator} / ${denominator}`);
+        const result = divideNumbers(numerator, denominator);
+        messageEl.textContent = `Result is: ${result.toFixed(2)}`;
+        messageEl.classList.remove('error-text');
+      } catch (error) {
+        console.error(error);
+        messageEl.textContent = `Error: ${error.message}`;
+        messageEl.classList.add('error-text');
+      }
+    });
+  </script>
+
+</body>
+</html>
