@@ -1,0 +1,102 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 4vw;
+  color: #2c7be5;
+  margin-bottom: 15px;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #2c7be5;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.nav a:hover {
+  background-color: #1a5fc4;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.hero img {
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.hero h2 {
+  font-size: 3vw;
+  margin: 20px 0 10px;
+  color: #444;
+}
+
+.hero p {
+  font-size: 1.2vw;
+  width: 80%;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h2 {
+    font-size: 5vw;
+  }
+
+  .hero p {
+    font-size: 3.5vw;
+  }
+
+  .nav a {
+    margin: 5px 0;
+    width: 60%;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 6vw;
+  }
+
+  .hero img {
+    width: 95%;
+  }
+}

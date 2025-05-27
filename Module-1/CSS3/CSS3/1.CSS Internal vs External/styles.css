@@ -1,0 +1,21 @@
+/* External CSS */
+
+/* Styling links (if any added later) */
+a {
+  color: #006064;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #e91e63;
+}
+
+/* General paragraph styles */
+p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #444;
+  margin-top: 15px;
+}

@@ -1,0 +1,47 @@
+/* ================================
+   Global Styles
+   ================================ */
+
+/* Body base font and background */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f9fc;
+  margin: 40px;
+  text-align: center;
+  color: #333;
+}
+
+/* ================================
+   Container Styles
+   ================================ */
+
+/* Center content with max width and padding */
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ================================
+   Call To Action Button Styles
+   ================================ */
+
+/* Style for main CTA button */
+.cta-button {
+  background-color: #007BFF; /* Primary blue */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

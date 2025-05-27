@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 1 - CSS Inclusion Methods (Styled)</title>
+
+  <!-- Internal CSS -->
+  <style>
+    /* Body background and font */
+    body {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      font-family: 'Poppins', sans-serif;
+      margin: 40px;
+      text-align: center;
+      color: #333;
+    }
+
+    /* Subheading style */
+    h2 {
+      font-weight: 600;
+      font-size: 2rem;
+      margin-top: 20px;
+      color: #19afb4;
+      text-shadow: 1px 1px 2px #a8edea;
+    }
+
+    /* Container styling */
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+  </style>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="container">
+    <!-- Inline CSS: red heading -->
+    <h1 style="color: #1e62e9; font-size: 3rem; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px;">
+      Welcome to the Community Event Portal
+    </h1>
+
+    <h2>Explore Events Near You</h2>
+  </div>
+
+</body>
+</html>

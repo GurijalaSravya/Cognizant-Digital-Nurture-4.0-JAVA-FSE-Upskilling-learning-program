@@ -1,0 +1,80 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
+  color: #e0e0e0;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #64b5f6;
+  font-size: 36px;
+}
+
+.tagline {
+  color: #b0bec5;
+  font-size: 16px;
+}
+
+/* Event Cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.eventCard {
+  background-color: #1e1e1e;
+  padding: 20px;
+  margin: 10px;
+  border: 2px solid #424242;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.eventCard:hover {
+  transform: scale(1.03);
+}
+
+/* Outline for selected card */
+.selected {
+  outline: 3px dashed #ffd54f;
+  outline-offset: 5px;
+}
+
+/* Visibility: hidden (still takes space) */
+.hiddenCard {
+  visibility: hidden;
+}
+
+/* Display: none (removed from layout) */
+.removedCard {
+  display: none;
+}
+
+/* Text styling */
+.eventCard h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #ffcc80;
+}
+
+.eventCard p {
+  line-height: 1.5;
+  font-size: 15px;
+}
