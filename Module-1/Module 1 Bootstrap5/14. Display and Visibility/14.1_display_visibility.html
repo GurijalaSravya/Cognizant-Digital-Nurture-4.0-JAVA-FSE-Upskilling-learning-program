@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bootstrap 5 Display and Visibility - Dark Theme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 40px;
+      background-color: #121212; /* Very dark background */
+      color: #e0e0e0; /* Light text */
+    }
+
+    .box {
+      border-radius: 0.5rem;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 2rem;
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+    }
+
+    .box-1 { background-color: #1c1c1c; }    /* Dark charcoal */
+    .box-2 { background-color: #2a2a2a; }    /* Darker gray */
+    .box-3 { background-color: #333333; }    /* Almost black */
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 class="mb-4 text-light">Bootstrap 5 Display and Visibility Utilities - Dark Theme</h2>
+
+    <!-- Visible only on xs and sm, hidden md and up -->
+    <div class="box box-1 d-block d-md-none">
+      Visible on Extra Small & Small (mobile) only (<code>d-block d-md-none</code>)
+    </div>
+
+    <!-- Hidden on xs and sm, visible block md and up -->
+    <div class="box box-2 d-none d-md-block d-lg-none">
+      Visible on Medium only (<code>d-none d-md-block d-lg-none</code>)
+    </div>
+
+    <!-- Hidden on xs, sm, md, visible flex lg and up -->
+    <div class="box box-3 d-none d-lg-flex justify-content-center align-items-center">
+      Visible on Large and above as flex (<code>d-none d-lg-flex</code>)
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

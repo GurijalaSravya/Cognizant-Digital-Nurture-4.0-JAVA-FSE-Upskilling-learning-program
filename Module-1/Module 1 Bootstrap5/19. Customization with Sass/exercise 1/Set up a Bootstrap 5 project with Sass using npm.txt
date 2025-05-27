@@ -1,0 +1,79 @@
+Step-by-step: Setting Up Bootstrap 5 with Sass Using npm
+
+1. Initialize npm project
+Open your terminal, create a project folder, then:
+
+npm init -y
+
+This creates a package.json.
+
+2. Install Bootstrap and Sass
+
+npm install bootstrap@5
+npm install sass --save-dev
+
+3. Create project structure
+
+your-project/
+│
+├── node_modules/
+├── scss/
+│   └── custom.scss
+├── css/
+│   └── custom.css (will be generated)
+├── index.html
+├── package.json
+
+4. Create scss/custom.scss
+This is where you will import Bootstrap's SCSS.
+
+// scss/custom.scss
+
+// You can override Bootstrap variables here before the import if you want
+// For now, just import Bootstrap SCSS
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+5. Add build script to package.json
+In your package.json, add a script to compile SCSS:
+
+{
+  "name": "bootstrap-sass-project",
+  "version": "1.0.0",
+  "scripts": {
+    "build-css": "sass scss/custom.scss css/custom.css --no-source-map --style=expanded"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
+
+6. Compile SCSS to CSS
+Run this command to compile your SCSS:
+
+npm run build-css
+
+This generates css/custom.css with Bootstrap styles.
+
+7. Create index.html
+Use your compiled CSS here:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bootstrap 5 with Sass Setup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/custom.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h1>Hello, Bootstrap 5 with Sass!</h1>
+    <button class="btn btn-primary">Primary Button</button>
+  </div>
+
+</body>
+</html>

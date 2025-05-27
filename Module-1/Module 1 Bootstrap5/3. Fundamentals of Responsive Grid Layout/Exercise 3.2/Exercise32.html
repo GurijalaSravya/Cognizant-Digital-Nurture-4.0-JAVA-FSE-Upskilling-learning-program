@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Grid Structure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(to right, #fefefe, #e3f2fd);
+      padding: 2rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-weight: 700;
+      color: #0d47a1;
+      margin-bottom: 2rem;
+    }
+
+    .info-box {
+      background-color: #ffffff;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .info-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-title {
+      color: #1565c0;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .info-text {
+      color: #555;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="section-title">Responsive Layout with Bootstrap Grid</h1>
+
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="info-box text-center">
+          <h5 class="info-title">Column 1</h5>
+          <p class="info-text">This column spans full width on small devices, half on medium, and one-third on large devices.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="info-box text-center">
+          <h5 class="info-title">Column 2</h5>
+          <p class="info-text">Utilizes the grid system with <code>.container</code>, <code>.row</code>, and <code>.col-*</code> classes.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="info-box text-center">
+          <h5 class="info-title">Column 3</h5>
+          <p class="info-text">The layout adapts responsively, stacking and aligning based on screen size.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

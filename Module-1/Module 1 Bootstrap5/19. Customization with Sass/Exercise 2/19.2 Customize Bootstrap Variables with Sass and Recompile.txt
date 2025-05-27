@@ -1,0 +1,83 @@
+Step 1: Create your own _custom-variables.scss file to override Bootstrap variables
+
+// scss/_custom-variables.scss
+
+// Customize Bootstrap variables before importing Bootstrap
+$primary: #1abc9c;       // turquoise
+$secondary: #34495e;     // dark blue-grey
+$success: #2ecc71;       // green
+$danger: #e74c3c;        // red
+$warning: #f39c12;       // orange
+$info: #3498db;          // blue
+
+$border-radius: 2rem;    // bigger rounded corners
+$font-family-sans-serif: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+Step 2: Modify your custom.scss to import your variables first, then Bootstrap
+
+// scss/custom.scss
+
+@import "custom-variables"; // import your overrides first
+
+@import "../node_modules/bootstrap/scss/bootstrap"; // then import Bootstrap
+
+Step 3: Compile your SCSS
+Make sure your folder structure:
+
+project/
+├── scss/
+│   ├── _custom-variables.scss
+│   └── custom.scss
+├── css/
+│   └── custom.css  (generated)
+├── index.html
+├── package.json
+
+Run this to compile SCSS to CSS:
+
+npm run build-css
+
+Where in package.json you have:
+
+"scripts": {
+  "build-css": "sass scss/custom.scss css/custom.css --no-source-map --style=expanded"
+}
+
+Step 4: Example index.html using the customized Bootstrap CSS
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bootstrap 5 Customized Variables</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/custom.css" rel="stylesheet" />
+  <style>
+    body {
+      padding: 2rem;
+      background: #f0f4f8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h1 class="text-primary">Custom Bootstrap Theme</h1>
+
+    <button class="btn btn-primary mb-3">Primary Button</button>
+    <button class="btn btn-secondary mb-3">Secondary Button</button>
+    <button class="btn btn-success mb-3">Success Button</button>
+    <button class="btn btn-danger mb-3">Danger Button</button>
+
+    <div class="card" style="width: 22rem;">
+      <div class="card-body">
+        <h5 class="card-title">Card with Custom Border Radius</h5>
+        <p class="card-text">Notice the larger rounded corners and custom colors.</p>
+        <a href="#" class="btn btn-info">Info Button</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

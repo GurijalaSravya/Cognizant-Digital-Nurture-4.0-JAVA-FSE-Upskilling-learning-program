@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap 5 Local Setup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Link to downloaded Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      border-radius: 1rem;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container hero">
+    <div class="card text-center p-4 w-100" style="max-width: 600px;">
+      <div class="card-body">
+        <h1 class="card-title display-5 text-primary fw-bold mb-3">Welcome to Bootstrap 5</h1>
+        <p class="card-text lead text-muted">This page is styled using local Bootstrap files. Everything you see here is built using Bootstrap's utility classes and components.</p>
+        <a href="#" class="btn btn-lg btn-success mt-3">Get Started</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link to downloaded Bootstrap JS bundle -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
