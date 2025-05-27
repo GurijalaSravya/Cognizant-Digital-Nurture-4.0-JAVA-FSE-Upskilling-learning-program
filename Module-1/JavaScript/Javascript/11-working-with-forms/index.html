@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Working with Forms</title>
+</head>
+<body>
+  <h1>Event Registration Form</h1>
+  <form id="regForm">
+    Name: <input name="name" required><br>
+    Email: <input name="email" type="email" required><br>
+    Event: <select name="event">
+      <option value="Music Night">Music Night</option>
+      <option value="Art Workshop">Art Workshop</option>
+    </select><br>
+    <button type="submit">Register</button>
+    <div id="formError" style="color:red;"></div>
+  </form>
+  <script src="main.js"></script>
+</body>
+</html>
